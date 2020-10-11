@@ -7,6 +7,6 @@ RUN yum install -y curl python-pip flask
 # Install app
 ADD src /src
 
-EXPOSE 5000
+EXPOSE 80
 
 CMD cd /src && python home.py
