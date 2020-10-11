@@ -9,7 +9,7 @@
     "containerDefinitions": [
         {
             "environment": [],
-            "name": "simple-app",
+            "name": "flask-app",
             "image": "amazon/amazon-ecs-sample",
             "cpu": 10,
             "memory": 500,
@@ -26,9 +26,7 @@
                 }
             ],
             "entryPoint": [
-                "/usr/sbin/apache2",
-                "-D",
-                "FOREGROUND"
+                "/src"
             ],
             "essential": true
         },
@@ -39,7 +37,7 @@
             "memory": 500,
             "volumesFrom": [
             {
-              "sourceContainer": "simple-app"
+              "sourceContainer": "flask-app"
             }
             ],
             "entryPoint": [
